@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поддержка — SEVER EVENTS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sever: {
+                            void: '#050505',
+                            gunmetal: '#0a0a0f',
+                            cyan: '#00f0ff',
+                            magenta: '#ff00aa',
+                            electric: '#7000ff',
+                            surface: '#111118'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-sever-void text-white cursor-none">
+    <div id="cursor" class="fixed w-4 h-4 bg-sever-cyan rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-100"></div>
+
+    <script src="components/nav-component.js"></script>
+    <nav-component></nav-component>
+
+    <main class="relative min-h-screen">
+        <section class="relative min-h-screen w-full overflow-hidden">
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-gradient-to-b from-sever-void via-sever-surface/40 to-sever-void"></div>
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,240,255,0.15),_transparent_60%)]"></div>
+            </div>
+
+            <div class="relative z-10 px-6 md:px-16 pt-32 pb-20">
+                <div class="max-w-6xl mx-auto">
+                    <div class="mb-12">
+                        <p class="text-xs tracking-[0.4em] text-sever-cyan mb-4">ПОДДЕРЖКА SEVER</p>
+                        <h1 class="text-5xl md:text-7xl font-display font-bold mb-6">ПОДДЕРЖКА 24/7</h1>
+                        <p class="text-gray-400 max-w-2xl">
+                            Потеряли билет, нужна помощь или есть вопросы? Напишите нам — ответим как можно быстрее.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="glass-panel rounded-2xl p-8">
+                            <h2 class="text-2xl font-display font-bold mb-6">Написать в поддержку</h2>
+                            <form id="support-form" class="space-y-5">
+                                <div>
+                                    <label class="block text-xs tracking-widest text-white/60 mb-2">ИМЯ</label>
+                                    <input type="text" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:border-sever-cyan" placeholder="Ваше имя">
+                                </div>
+                                <div>
+                                    <label class="block text-xs tracking-widest text-white/60 mb-2">ПОЧТА</label>
+                                    <input type="email" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:border-sever-cyan" placeholder="you@email.com">
+                                </div>
+                                <div>
+                                    <label class="block text-xs tracking-widest text-white/60 mb-2">СООБЩЕНИЕ</label>
+                                    <textarea required rows="4" class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:border-sever-cyan" placeholder="Чем можем помочь?"></textarea>
+                                </div>
+                                <button type="submit" class="magnetic-btn w-full px-6 py-4 rounded-full bg-gradient-to-r from-sever-cyan to-sever-magenta text-black font-bold tracking-widest">
+                                    ОТПРАВИТЬ
+                                </button>
+                                <p id="support-success" class="hidden text-sm text-sever-cyan tracking-widest text-center">Сообщение отправлено. Мы на связи.</p>
+                            </form>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="rounded-2xl border border-white/10 bg-sever-surface/60 p-6">
+                                <h3 class="text-lg font-bold mb-2">Быстрые ответы</h3>
+                                <p class="text-gray-400 text-sm">Мы отвечаем в течение 1-2 часов.</p>
+                            </div>
+                            <div class="rounded-2xl border border-white/10 bg-sever-surface/60 p-6">
+                                <h3 class="text-lg font-bold mb-2">Почта</h3>
+                                <p class="text-gray-400 text-sm">support@sever-events.com</p>
+                            </div>
+                            <div class="rounded-2xl border border-white/10 bg-sever-surface/60 p-6">
+                                <h3 class="text-lg font-bold mb-2">Безопасность</h3>
+                                <p class="text-gray-400 text-sm">Мы никогда не просим пароль или банковские данные.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="relative py-20 px-4 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-display font-bold tracking-tighter text-white/50 hover:text-white transition-colors cursor-pointer">
+                SEVER
+            </div>
+            
+            <div class="flex gap-8">
+                <a href="#" class="text-gray-500 hover:text-sever-cyan transition-colors transform hover:scale-110 duration-300">
+                    <i data-feather="instagram" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-sever-magenta transition-colors transform hover:scale-110 duration-300">
+                    <i data-feather="twitter" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-sever-electric transition-colors transform hover:scale-110 duration-300">
+                    <i data-feather="youtube" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors transform hover:scale-110 duration-300">
+                    <i data-feather="music" class="w-6 h-6"></i>
+                </a>
+            </div>
+
+            <div class="text-xs text-gray-600 tracking-widest">
+                © 2024 SEVER EVENTS
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const supportForm = document.getElementById('support-form');
+        const successMsg = document.getElementById('support-success');
+        supportForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            successMsg.classList.remove('hidden');
+            supportForm.reset();
+        });
+    </script>
+    <script src="background.js"></script>
+    <script src="cursor.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

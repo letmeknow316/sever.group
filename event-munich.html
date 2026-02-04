@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мюнхен — SEVER EVENTS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sever: {
+                            void: '#050505',
+                            gunmetal: '#0a0a0f',
+                            cyan: '#00f0ff',
+                            magenta: '#ff00aa',
+                            electric: '#7000ff',
+                            surface: '#111118'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-sever-void text-white cursor-none">
+    <div id="cursor" class="fixed w-4 h-4 bg-sever-cyan rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-100"></div>
+
+    <script src="components/nav-component.js"></script>
+    <nav-component></nav-component>
+
+    <main class="relative min-h-screen">
+        <section class="relative min-h-screen w-full overflow-hidden flex items-center">
+            <div class="absolute inset-0">
+                <img src="images/city-munich.jpg" alt="Мюнхен" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-t from-sever-void via-sever-void/60 to-transparent"></div>
+            </div>
+
+            <div class="relative z-10 w-full px-8 md:px-16 py-24">
+                <div class="max-w-4xl">
+                    <div class="flex items-center gap-4 mb-4 text-sever-cyan">
+                        <span class="px-3 py-1 border border-sever-cyan/30 rounded-full text-xs tracking-widest">ГЕРМАНИЯ</span>
+                        <span class="w-12 h-px bg-sever-cyan"></span>
+                    </div>
+                    <h1 class="text-6xl md:text-9xl font-display font-bold mb-6 tracking-tighter">МЮНХЕН</h1>
+                    <p class="text-lg md:text-2xl text-gray-300 mb-10">
+                        Ждите, SEVER скоро появится в вашем городе.
+                    </p>
+                    <a href="index.html" class="inline-flex items-center gap-3 px-8 py-4 bg-sever-surface/60 backdrop-blur-md border border-white/10 rounded-full hover:bg-sever-cyan/10 hover:border-sever-cyan transition-all duration-500">
+                        <span class="font-medium tracking-widest">НАЗАД К ГОРОДАМ</span>
+                        <i data-feather="arrow-left" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="relative py-20 px-4 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-display font-bold tracking-tighter text-white/50 hover:text-white transition-colors cursor-pointer">
+                SEVER
+            </div>
+            
+            <div class="flex gap-8">
+                <a href="#" class="text-gray-500 hover:text-sever-cyan transition-colors transform hover:scale-110 duration-300">
+                    <i data-feather="instagram" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-sever-magenta transition-colors transform hover:scale-110 duration-300">
+                    <i data-feather="twitter" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-sever-electric transition-colors transform hover:scale-110 duration-300">
+                    <i data-feather="youtube" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors transform hover:scale-110 duration-300">
+                    <i data-feather="music" class="w-6 h-6"></i>
+                </a>
+            </div>
+
+            <div class="text-xs text-gray-600 tracking-widest">
+                © 2024 SEVER EVENTS
+            </div>
+        </div>
+    </footer>
+
+    <script src="background.js"></script>
+    <script src="cursor.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
