@@ -117,10 +117,10 @@
                 <h2 class="text-4xl md:text-6xl font-display font-bold mb-8">ENTER THE VOID</h2>
                 <p class="text-gray-400 mb-12">Билеты по €7. Ограниченная вместимость. Забронируйте вход сейчас.</p>
                 
-                <button onclick="document.dispatchEvent(new CustomEvent('open-ticket-modal'))" 
-                        class="magnetic-btn px-12 py-6 bg-gradient-to-r from-sever-cyan to-sever-magenta text-black font-bold text-lg rounded-full hover:shadow-[0_0_40px_rgba(0,240,255,0.5)] transition-all duration-300 transform hover:scale-105">
+                <a href="https://app.tickettailor.com/events/severevents/2055494" target="_blank" rel="noopener" 
+                        class="magnetic-btn inline-flex items-center justify-center px-12 py-6 bg-gradient-to-r from-sever-cyan to-sever-magenta text-black font-bold text-lg rounded-full hover:shadow-[0_0_40px_rgba(0,240,255,0.5)] transition-all duration-300 transform hover:scale-105">
                     КУПИТЬ БИЛЕТЫ — €7
-                </button>
+                </a>
             </div>
         </section>
 
@@ -162,9 +162,7 @@
         </div>
     </footer>
 
-    <script src="components/ticket-modal.js"></script>
-    <ticket-modal></ticket-modal>
-    <script src="background.js"></script>
+        <script src="background.js"></script>
     <script src="cursor.js"></script>
     <script>feather.replace();</script>
 </body>
