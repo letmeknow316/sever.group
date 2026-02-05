@@ -13,6 +13,7 @@ class NavComponent extends HTMLElement {
                             SEVER
                         </a>
                         <div class="flex items-center gap-3 md:gap-4 relative">
+                            <a href="about.html" class="magnetic-btn px-4 md:px-5 py-2 rounded-full border border-sever-electric/40 text-xs md:text-sm tracking-widest text-sever-electric hover:text-white hover:border-sever-electric hover:bg-sever-electric/10 transition-all">О НАС</a>
                             <button type="button" data-tickets-toggle class="magnetic-btn px-4 md:px-5 py-2 rounded-full border border-sever-cyan/40 text-xs md:text-sm tracking-widest text-sever-cyan hover:text-white hover:border-sever-cyan hover:bg-sever-cyan/10 transition-all">
                                 БИЛЕТЫ
                             </button>
@@ -23,22 +24,25 @@ class NavComponent extends HTMLElement {
                     </div>
                 </div>
 
-                <div data-tickets-panel class="hidden absolute top-full right-0 mt-3 w-[min(460px,90vw)]">
-                    <div class="rounded-2xl border border-white/10 bg-[#0b0b10] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.55)]">
-                        <div class="flex items-center justify-between mb-4">
+                <div data-tickets-panel class="hidden absolute top-full right-0 mt-3 w-[min(420px,90vw)]">
+                    <div class="rounded-2xl border border-white/10 bg-[#0b0b10] shadow-[0_20px_60px_rgba(0,0,0,0.55)] overflow-hidden">
+                        <div class="flex items-center justify-between px-5 py-4 border-b border-white/5">
                             <p class="text-xs tracking-[0.35em] text-white/50">ВЫБЕРИТЕ ГОРОД</p>
                             <button type="button" data-tickets-close class="text-xs tracking-widest text-white/50 hover:text-white">ЗАКРЫТЬ</button>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <a class="rounded-xl border border-white/10 px-4 py-3 text-sm text-white/80 hover:text-white hover:border-sever-cyan/60 hover:bg-sever-cyan/10 transition-all" href="event-stuttgart.html">Штуттгарт</a>
-                            <a class="rounded-xl border border-white/10 px-4 py-3 text-sm text-white/80 hover:text-white hover:border-sever-cyan/60 hover:bg-sever-cyan/10 transition-all" href="event-munich.html">Мюнхен</a>
-                            <a class="rounded-xl border border-white/10 px-4 py-3 text-sm text-white/80 hover:text-white hover:border-sever-cyan/60 hover:bg-sever-cyan/10 transition-all" href="event-sofia.html">София</a>
-                            <a class="rounded-xl border border-white/10 px-4 py-3 text-sm text-white/80 hover:text-white hover:border-sever-cyan/60 hover:bg-sever-cyan/10 transition-all" href="event-varna.html">Варна</a>
-                            <a class="rounded-xl border border-white/10 px-4 py-3 text-sm text-white/80 hover:text-white hover:border-sever-cyan/60 hover:bg-sever-cyan/10 transition-all" href="event-plovdiv.html">Пловдив <span class="relative inline-flex h-2.5 w-2.5 ml-2 align-middle">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-                            </span></a>
-                            <a class="rounded-xl border border-white/10 px-4 py-3 text-sm text-white/80 hover:text-white hover:border-sever-cyan/60 hover:bg-sever-cyan/10 transition-all" href="event-vienna.html">Вена</a>
+                        <div class="flex flex-col">
+                            <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all border-b border-white/5" href="event-stuttgart.html">Штуттгарт</a>
+                            <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all border-b border-white/5" href="event-munich.html">Мюнхен</a>
+                            <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all border-b border-white/5" href="event-sofia.html">София</a>
+                            <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all border-b border-white/5" href="event-varna.html">Варна</a>
+                            <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all border-b border-white/5 flex items-center justify-between" href="event-plovdiv.html">
+                                <span>Пловдив</span>
+                                <span class="relative inline-flex h-2.5 w-2.5">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                                </span>
+                            </a>
+                            <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all" href="event-vienna.html">Вена</a>
                         </div>
                     </div>
                 </div>

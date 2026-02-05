@@ -243,3 +243,83 @@ body {
 * {
     cursor: none !important;
 }
+
+
+/* About page background visibility */
+.about-page {
+    background: transparent;
+}
+
+.about-page .glass-panel {
+    background: rgba(10, 10, 15, 0.65);
+}
+
+.about-page .about-photo img {
+    filter: saturate(1.05);
+}
+
+
+/* About page photo cosmos */
+.about-photo-cosmos {
+    position: fixed;
+    inset: 0;
+    z-index: -9;
+    pointer-events: none;
+}
+
+.about-photo-cosmos .photo-card {
+    position: absolute;
+    width: clamp(140px, 16vw, 260px);
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    opacity: 0.55;
+    filter: saturate(1.1) contrast(1.05);
+    mix-blend-mode: screen;
+}
+
+.about-photo-cosmos .photo-card:nth-child(1) { top: 8%; left: 6%; }
+.about-photo-cosmos .photo-card:nth-child(2) { top: 18%; left: 58%; }
+.about-photo-cosmos .photo-card:nth-child(3) { top: 35%; left: 12%; }
+.about-photo-cosmos .photo-card:nth-child(4) { top: 42%; left: 70%; }
+.about-photo-cosmos .photo-card:nth-child(5) { top: 55%; left: 22%; }
+.about-photo-cosmos .photo-card:nth-child(6) { top: 62%; left: 62%; }
+.about-photo-cosmos .photo-card:nth-child(7) { top: 75%; left: 8%; }
+.about-photo-cosmos .photo-card:nth-child(8) { top: 78%; left: 52%; }
+.about-photo-cosmos .photo-card:nth-child(9) { top: 12%; left: 82%; }
+.about-photo-cosmos .photo-card:nth-child(10) { top: 28%; left: 84%; }
+.about-photo-cosmos .photo-card:nth-child(11) { top: 68%; left: 30%; }
+.about-photo-cosmos .photo-card:nth-child(12) { top: 22%; left: 30%; }
+
+
+.poster-wobble {
+  animation: posterWobble 6s ease-in-out infinite;
+  transform-origin: 50% 60%;
+}
+
+@keyframes posterWobble {
+  0%, 100% {
+    transform: rotate(-0.6deg);
+  }
+  50% {
+    transform: rotate(0.6deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster-wobble {
+    animation: none;
+  }
+}
+
+
+.poster-glow {
+  box-shadow: 0 0 25px rgba(255, 0, 170, 0.25);
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}
+
+#posterToggle.poster-active .poster-glow {
+  box-shadow: 0 0 55px rgba(255, 0, 170, 0.65), 0 0 120px rgba(255, 0, 170, 0.35);
+}

@@ -43,9 +43,8 @@
         <!-- Event Hero -->
         <section class="relative h-screen w-full overflow-hidden">
             <div class="absolute inset-0">
-                <img src="images/city-plovdiv.jpg" alt="Пловдив Рейв" class="w-full h-full object-cover opacity-50">
-                <div class="absolute inset-0 bg-gradient-to-t from-sever-void via-sever-void/50 to-transparent"></div>
-                <div class="absolute inset-0 bg-sever-magenta/20 mix-blend-multiply"></div>
+                <img src="images/city-plovdiv.jpg" alt="Пловдив Рейв" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-t from-sever-void via-sever-void/60 to-transparent"></div>
             </div>
             
             <div class="relative z-10 h-full flex flex-col justify-end p-8 md:p-16 pb-32">
@@ -75,7 +74,19 @@
             </div>
         </section>
 
-        <!-- Event Details -->
+        <section class="px-8 md:px-16 py-10 md:py-14 relative">
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-sever-void via-sever-void/70 to-transparent"></div>
+            <div class="max-w-6xl mx-auto flex justify-start items-center min-h-[420px]">
+                <button id="posterToggle" class="w-full max-w-[300px] text-left group md:-translate-x-28 lg:-translate-x-36">
+                    <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-sever-surface/80 poster-wobble poster-glow">
+                        <img src="images/poster1.jpg" alt="Афиша SEVER" class="w-full h-full object-cover aspect-[2/3] opacity-95 group-hover:opacity-100 transition-opacity">
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <div id="event-details" class="hidden">
+<!-- Event Details -->
         <section class="py-20 px-8 md:px-16">
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
                 <div>
@@ -111,28 +122,30 @@
             </div>
         </section>
 
-        <!-- Ticket Section -->
-        <section class="py-20 px-8 md:px-16 bg-sever-surface/30">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl md:text-6xl font-display font-bold mb-8">ENTER THE VOID</h2>
-                <p class="text-gray-400 mb-12">Билеты по €7. Ограниченная вместимость. Забронируйте вход сейчас.</p>
-                
-                <a href="https://app.tickettailor.com/events/severevents/2055494" target="_blank" rel="noopener" 
-                        class="magnetic-btn inline-flex items-center justify-center px-12 py-6 bg-gradient-to-r from-sever-cyan to-sever-magenta text-black font-bold text-lg rounded-full hover:shadow-[0_0_40px_rgba(0,240,255,0.5)] transition-all duration-300 transform hover:scale-105">
-                    КУПИТЬ БИЛЕТЫ — €7
-                </a>
-            </div>
-        </section>
+        <div class="bg-sever-surface/30">
+            <!-- Ticket Section -->
+            <section class="py-20 px-8 md:px-16">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-6xl font-display font-bold mb-8">ENTER THE VOID</h2>
+                    <p class="text-gray-400 mb-12">Билеты по €7. Ограниченная вместимость. Забронируйте вход сейчас.</p>
+                    
+                    <a href="https://app.tickettailor.com/events/severevents/2055494" target="_blank" rel="noopener" 
+                            class="magnetic-btn inline-flex items-center justify-center px-12 py-6 bg-gradient-to-r from-sever-cyan to-sever-magenta text-black font-bold text-lg rounded-full hover:shadow-[0_0_40px_rgba(0,240,255,0.5)] transition-all duration-300 transform hover:scale-105">
+                        КУПИТЬ БИЛЕТЫ — €7
+                    </a>
+                </div>
+            </section>
 
-        <!-- Gallery -->
-        <section class="py-20 px-8 md:px-16">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <img src="images/gallery-1.jpg" class="rounded-lg opacity-60 hover:opacity-100 transition-opacity">
-                <img src="images/gallery-2.jpg" class="rounded-lg opacity-60 hover:opacity-100 transition-opacity md:mt-8">
-                <img src="images/gallery-3.jpg" class="rounded-lg opacity-60 hover:opacity-100 transition-opacity">
-                <img src="images/gallery-4.jpg" class="rounded-lg opacity-60 hover:opacity-100 transition-opacity md:mt-8">
-            </div>
-        </section>
+            <!-- Gallery -->
+            <section id="gallery-section" class="py-20 px-8 md:px-16">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <img src="images/gallery-1.jpg" class="gallery-anim rounded-lg opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="images/gallery-2.jpg" class="gallery-anim rounded-lg opacity-60 hover:opacity-100 transition-opacity md:mt-8">
+                    <img src="images/gallery-3.jpg" class="gallery-anim rounded-lg opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="images/gallery-4.jpg" class="gallery-anim rounded-lg opacity-60 hover:opacity-100 transition-opacity md:mt-8">
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer class="relative py-20 px-4 md:px-12 border-t border-white/5">
@@ -164,6 +177,52 @@
 
         <script src="background.js"></script>
     <script src="cursor.js"></script>
+    <script>
+        const toggleBtn = document.getElementById('posterToggle');
+        const details = document.getElementById('event-details');
+
+        function initGalleryScroll() {
+            const gallerySection = document.getElementById('gallery-section');
+            const galleryItems = document.querySelectorAll('.gallery-anim');
+            if (!gallerySection || !galleryItems.length || !window.gsap || !window.ScrollTrigger) return;
+
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.set(galleryItems, { transformOrigin: '50% 50%' });
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: gallerySection,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            })
+            .to(galleryItems[0], { x: 160, y: -40, rotation: 8, scale: 1.05, ease: 'none' }, 0)
+            .to(galleryItems[1], { x: -120, y: 60, rotation: -10, scale: 0.98, ease: 'none' }, 0)
+            .to(galleryItems[2], { x: 80, y: 80, rotation: 12, scale: 1.03, ease: 'none' }, 0)
+            .to(galleryItems[3], { x: -160, y: -30, rotation: -6, scale: 1.02, ease: 'none' }, 0);
+        }
+
+        if (toggleBtn && details) {
+            toggleBtn.addEventListener('click', () => {
+                const isHidden = details.classList.contains('hidden');
+                details.classList.toggle('hidden');
+                toggleBtn.classList.toggle('poster-active', isHidden);
+                if (!details.classList.contains('hidden')) {
+                    details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    requestAnimationFrame(() => {
+                        initGalleryScroll();
+                        if (window.ScrollTrigger) {
+                            ScrollTrigger.refresh();
+                        }
+                    });
+                }
+            });
+        }
+
+        // initialize in case the details block is visible on load
+        initGalleryScroll();
+    </script>
     <script>feather.replace();</script>
 </body>
 </html>
