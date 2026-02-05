@@ -34,7 +34,13 @@ class NavComponent extends HTMLElement {
                             <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all border-b border-white/5" href="event-stuttgart.html">Штуттгарт</a>
                             <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all border-b border-white/5" href="event-munich.html">Мюнхен</a>
                             <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all border-b border-white/5" href="event-sofia.html">София</a>
-                            <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all border-b border-white/5" href="event-varna.html">Варна</a>
+                            <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all border-b border-white/5 flex items-center justify-between" href="event-varna.html">
+                                <span>Варна</span>
+                                <span class="relative inline-flex h-2.5 w-2.5">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                                </span>
+                            </a>
                             <a class="px-5 py-4 text-base text-white/85 hover:text-white hover:bg-sever-cyan/10 transition-all border-b border-white/5 flex items-center justify-between" href="event-plovdiv.html">
                                 <span>Пловдив</span>
                                 <span class="relative inline-flex h-2.5 w-2.5">

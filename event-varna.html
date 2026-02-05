@@ -6,6 +6,8 @@
     <title>Варна — SEVER EVENTS</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
         tailwind.config = {
@@ -31,36 +33,118 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-sever-void text-white cursor-none">
+<body class="bg-sever-void text-white cursor-none varna-theme">
     <div id="cursor" class="fixed w-4 h-4 bg-sever-cyan rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-100"></div>
 
     <script src="components/nav-component.js"></script>
     <nav-component></nav-component>
 
-    <main class="relative min-h-screen">
-        <section class="relative min-h-screen w-full overflow-hidden flex items-center">
+    <main class="relative">
+        <!-- Event Hero -->
+        <section class="relative h-screen w-full overflow-hidden">
             <div class="absolute inset-0">
                 <img src="images/city-varna.jpg" alt="Варна" class="w-full h-full object-cover opacity-40">
-                <div class="absolute inset-0 bg-gradient-to-t from-sever-void via-sever-void/60 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-sever-void via-sever-void/40 to-transparent"></div>
             </div>
-
-            <div class="relative z-10 w-full px-8 md:px-16 py-24">
+            
+            <div class="relative z-10 h-full flex flex-col justify-end p-8 md:p-16 pb-32">
                 <div class="max-w-4xl">
                     <div class="flex items-center gap-4 mb-4 text-sever-cyan">
                         <span class="px-3 py-1 border border-sever-cyan/30 rounded-full text-xs tracking-widest">БОЛГАРИЯ</span>
                         <span class="w-12 h-px bg-sever-cyan"></span>
                     </div>
-                    <h1 class="text-6xl md:text-9xl font-display font-bold mb-6 tracking-tighter">ВАРНА</h1>
-                    <p class="text-lg md:text-2xl text-gray-300 mb-10">
-                        Ждите, SEVER скоро появится в вашем городе.
-                    </p>
-                    <a href="index.html" class="inline-flex items-center gap-3 px-8 py-4 bg-sever-surface/60 backdrop-blur-md border border-white/10 rounded-full hover:bg-sever-cyan/10 hover:border-sever-cyan transition-all duration-500">
-                        <span class="font-medium tracking-widest">НАЗАД К ГОРОДАМ</span>
-                        <i data-feather="arrow-left" class="w-5 h-5"></i>
-                    </a>
+                    <h1 class="text-6xl md:text-9xl font-display font-bold mb-6 tracking-tighter glitch" data-text="ВАРНА">
+                        ВАРНА
+                    </h1>
+                    <div class="flex flex-wrap gap-8 text-sm md:text-base">
+                        <div class="flex items-center gap-2">
+                            <i data-feather="calendar" class="w-5 h-5 text-sever-cyan"></i>
+                            <span>4 апреля</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-feather="map-pin" class="w-5 h-5 text-sever-cyan"></i>
+                            <span>Клуб Орион</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-feather="clock" class="w-5 h-5 text-sever-cyan"></i>
+                            <span>22:00 - 03:00</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <section class="px-8 md:px-16 py-10 md:py-14 relative">
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-sever-void via-sever-void/70 to-transparent"></div>
+            <div class="max-w-6xl mx-auto flex justify-start items-center min-h-[420px]">
+                <button id="posterToggle" class="w-full max-w-[300px] text-left group md:-translate-x-28 lg:-translate-x-36">
+                    <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-sever-surface/80 poster-wobble poster-glow">
+                        <img src="images/afisha_varna1.png" alt="Афиша SEVER" class="w-full h-full object-cover aspect-[2/3] opacity-95 group-hover:opacity-100 transition-opacity">
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <div id="event-details" class="hidden">
+<!-- Event Details -->
+        <section class="py-20 px-8 md:px-16">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-3xl font-display font-bold mb-6 text-sever-cyan">SEVER: PROJECT X</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Ты видел Project X.
+Теперь представь, что это происходит не в фильме, а в реальности — в Варне, в Клубе Орион, на одну ночь.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        SEVER делает вечеринку, где всё выходит за привычные рамки. Тематические декорации, профессиональный фотограф и фотозона для вашего Instagramm. Невероятный звук, свет и все твои любимые треки, которые будут играть всю ночь напролет!
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <div class="glass-panel p-6 rounded-xl liquid-border">
+                        <h3 class="text-xl font-bold mb-4">ЛАЙНАП</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                <span class="font-semibold">Cyber</span>
+                                <span class="text-sm text-gray-500">22:00</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                <span class="font-semibold">Secret Guest</span>
+                                <span class="text-sm text-gray-500">00:00</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                <span class="font-semibold">NIKSA</span>
+                                <span class="text-sm text-gray-500">00:30</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="bg-sever-surface/30">
+            <!-- Ticket Section -->
+            <section class="py-20 px-8 md:px-16">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-6xl font-display font-bold mb-8">ENTER THE VOID</h2>
+                    <p class="text-gray-400 mb-12">Билеты от €7. Ограниченная вместимость. Забронируйте вход сейчас.</p>
+                    
+                    <a href="https://app.tickettailor.com/events/severevents/2055494" target="_blank" rel="noopener" 
+                            class="magnetic-btn inline-flex items-center justify-center px-12 py-6 bg-gradient-to-r from-sever-cyan to-sever-magenta text-black font-bold text-lg rounded-full hover:shadow-[0_0_40px_rgba(0,240,255,0.5)] transition-all duration-300 transform hover:scale-105">
+                        КУПИТЬ БИЛЕТЫ — €7
+                    </a>
+                </div>
+            </section>
+
+            <!-- Gallery -->
+            <section id="gallery-section" class="py-20 px-8 md:px-16">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <img src="images/gallery-1.jpg" class="gallery-anim rounded-lg opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="images/gallery-2.jpg" class="gallery-anim rounded-lg opacity-60 hover:opacity-100 transition-opacity md:mt-8">
+                    <img src="images/gallery-3.jpg" class="gallery-anim rounded-lg opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="images/gallery-4.jpg" class="gallery-anim rounded-lg opacity-60 hover:opacity-100 transition-opacity md:mt-8">
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer class="relative py-20 px-4 md:px-12 border-t border-white/5">
@@ -73,7 +157,7 @@
                 <a href="#" class="text-gray-500 hover:text-sever-cyan transition-colors transform hover:scale-110 duration-300">
                     <i data-feather="instagram" class="w-6 h-6"></i>
                 </a>
-                <a href="#" class="text-gray-500 hover:text-sever-magenta transition-colors transform hover:scale-110 duration-300">
+                <a href="#" class="text-gray-500 hover:text-sever-cyan transition-colors transform hover:scale-110 duration-300">
                     <i data-feather="twitter" class="w-6 h-6"></i>
                 </a>
                 <a href="#" class="text-gray-500 hover:text-sever-electric transition-colors transform hover:scale-110 duration-300">
@@ -85,13 +169,59 @@
             </div>
 
             <div class="text-xs text-gray-600 tracking-widest">
-                © 2024 SEVER EVENTS
+                © 2026 SEVER EVENTS
             </div>
         </div>
     </footer>
 
-    <script src="background.js"></script>
+        <script src="background.js"></script>
     <script src="cursor.js"></script>
+    <script>
+        const toggleBtn = document.getElementById('posterToggle');
+        const details = document.getElementById('event-details');
+
+        function initGalleryScroll() {
+            const gallerySection = document.getElementById('gallery-section');
+            const galleryItems = document.querySelectorAll('.gallery-anim');
+            if (!gallerySection || !galleryItems.length || !window.gsap || !window.ScrollTrigger) return;
+
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.set(galleryItems, { transformOrigin: '50% 50%' });
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: gallerySection,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            })
+            .to(galleryItems[0], { x: 160, y: -40, rotation: 8, scale: 1.05, ease: 'none' }, 0)
+            .to(galleryItems[1], { x: -120, y: 60, rotation: -10, scale: 0.98, ease: 'none' }, 0)
+            .to(galleryItems[2], { x: 80, y: 80, rotation: 12, scale: 1.03, ease: 'none' }, 0)
+            .to(galleryItems[3], { x: -160, y: -30, rotation: -6, scale: 1.02, ease: 'none' }, 0);
+        }
+
+        if (toggleBtn && details) {
+            toggleBtn.addEventListener('click', () => {
+                const isHidden = details.classList.contains('hidden');
+                details.classList.toggle('hidden');
+                toggleBtn.classList.toggle('poster-active', isHidden);
+                if (!details.classList.contains('hidden')) {
+                    details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    requestAnimationFrame(() => {
+                        initGalleryScroll();
+                        if (window.ScrollTrigger) {
+                            ScrollTrigger.refresh();
+                        }
+                    });
+                }
+            });
+        }
+
+        // initialize in case the details block is visible on load
+        initGalleryScroll();
+    </script>
     <script>feather.replace();</script>
 </body>
 </html>
