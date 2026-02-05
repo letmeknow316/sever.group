@@ -204,6 +204,15 @@ img[loading] {
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
+    .sever-nav-brand {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+    .sever-nav-bar {
+        justify-content: center;
+    }
+
     body {
         cursor: auto !important;
     }
