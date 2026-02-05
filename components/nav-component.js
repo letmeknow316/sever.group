@@ -6,25 +6,25 @@ class NavComponent extends HTMLElement {
 
     render() {
         this.innerHTML = `
-            <nav class="fixed top-0 left-0 right-0 z-50">
+            <nav class="fixed top-0 left-0 right-0 z-50 sever-nav">
                 <div class="mx-auto max-w-7xl px-4 md:px-12 py-4 relative">
-                    <div class="flex items-center justify-between rounded-full border border-white/10 bg-sever-surface/40 backdrop-blur-xl px-5 py-3">
+                    <div class="sever-nav-bar flex items-center justify-between rounded-full border border-white/10 bg-sever-surface/40 backdrop-blur-xl px-5 py-3">
                         <a href="index.html" class="text-lg md:text-xl font-display font-bold tracking-widest text-white/80 hover:text-white transition-colors">
                             SEVER
                         </a>
-                        <div class="flex items-center gap-3 md:gap-4 relative">
-                            <a href="about.html" class="magnetic-btn px-4 md:px-5 py-2 rounded-full border border-sever-electric/40 text-xs md:text-sm tracking-widest text-sever-electric hover:text-white hover:border-sever-electric hover:bg-sever-electric/10 transition-all">О НАС</a>
-                            <button type="button" data-tickets-toggle class="magnetic-btn px-4 md:px-5 py-2 rounded-full border border-sever-cyan/40 text-xs md:text-sm tracking-widest text-sever-cyan hover:text-white hover:border-sever-cyan hover:bg-sever-cyan/10 transition-all">
+                        <div class="sever-nav-actions flex items-center gap-3 md:gap-4 relative">
+                            <a href="about.html" class="sever-nav-link magnetic-btn px-4 md:px-5 py-2 rounded-full border border-sever-electric/40 text-xs md:text-sm tracking-widest text-sever-electric hover:text-white hover:border-sever-electric hover:bg-sever-electric/10 transition-all">О НАС</a>
+                            <button type="button" data-tickets-toggle class="sever-nav-link magnetic-btn px-4 md:px-5 py-2 rounded-full border border-sever-cyan/40 text-xs md:text-sm tracking-widest text-sever-cyan hover:text-white hover:border-sever-cyan hover:bg-sever-cyan/10 transition-all">
                                 БИЛЕТЫ
                             </button>
-                            <a href="support.html" class="magnetic-btn px-4 md:px-5 py-2 rounded-full border border-sever-magenta/40 text-xs md:text-sm tracking-widest text-sever-magenta hover:text-white hover:border-sever-magenta hover:bg-sever-magenta/10 transition-all">
+                            <a href="support.html" class="sever-nav-link magnetic-btn px-4 md:px-5 py-2 rounded-full border border-sever-magenta/40 text-xs md:text-sm tracking-widest text-sever-magenta hover:text-white hover:border-sever-magenta hover:bg-sever-magenta/10 transition-all">
                                 ПОДДЕРЖКА
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div data-tickets-panel class="hidden absolute top-full right-0 mt-3 w-[min(420px,90vw)]">
+                <div data-tickets-panel class="sever-ticket-panel hidden absolute top-full right-0 mt-3 w-[min(420px,90vw)]">
                     <div class="rounded-2xl border border-white/10 bg-[#0b0b10] shadow-[0_20px_60px_rgba(0,0,0,0.55)] overflow-hidden">
                         <div class="flex items-center justify-between px-5 py-4 border-b border-white/5">
                             <p class="text-xs tracking-[0.35em] text-white/50">ВЫБЕРИТЕ ГОРОД</p>

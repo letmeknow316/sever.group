@@ -205,16 +205,46 @@ img[loading] {
 /* Mobile optimizations */
 @media (max-width: 768px) {
     body {
-        cursor: auto;
+        cursor: auto !important;
+    }
+    * {
+        cursor: auto !important;
     }
     #cursor, #cursor-follower {
-        display: none;
+        display: none !important;
     }
     .glass-panel {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
     }
+    body::before {
+        filter: none;
+        opacity: 0.18;
+    }
+    .sever-nav-bar {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 12px;
+    }
+    .sever-nav-actions {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+    .sever-nav-link {
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+    }
+    .sever-ticket-panel {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
 }
+
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
