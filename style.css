@@ -46,7 +46,7 @@ body::before {
         radial-gradient(60% 60% at 15% 20%, rgba(0, 240, 255, 0.25), transparent 60%),
         radial-gradient(50% 50% at 85% 30%, rgba(255, 0, 170, 0.22), transparent 60%),
         radial-gradient(70% 70% at 50% 80%, rgba(112, 0, 255, 0.22), transparent 65%);
-    opacity: var(--bg-alpha);
+    opacity: 0.22;
     filter: hue-rotate(calc(var(--bg-hue) * 1deg));
     transform: translate3d(0, calc(var(--bg-shift) * 1vh), 0);
     transition: opacity 0.4s ease;
@@ -237,13 +237,15 @@ img[loading] {
     }
     .sever-nav-actions {
         width: 100%;
-        justify-content: space-between;
-        gap: 8px;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
     }
     .sever-nav-link {
-        flex: 1 1 auto;
+        flex: 0 1 auto;
+        min-width: 30%;
         text-align: center;
-        padding: 8px 10px;
+        padding: 8px 12px;
         font-size: 10px;
         letter-spacing: 0.18em;
     }
@@ -382,3 +384,4 @@ body {
   letter-spacing: 0.5em;
   padding-left: 0.5em;
 }
+

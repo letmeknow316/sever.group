@@ -9,7 +9,7 @@ class NavComponent extends HTMLElement {
             <nav class="fixed top-0 left-0 right-0 z-50 sever-nav">
                 <div class="mx-auto max-w-7xl px-4 md:px-12 py-4 relative">
                     <div class="sever-nav-bar flex items-center justify-between rounded-full border border-white/10 bg-sever-surface/40 backdrop-blur-xl px-5 py-3">
-                        <a href="index.html" class="text-lg md:text-xl font-display font-bold tracking-widest text-white/80 hover:text-white transition-colors">
+                        <a href="index.html" class="sever-nav-brand text-lg md:text-xl font-display font-bold tracking-widest text-white/80 hover:text-white transition-colors">
                             SEVER
                         </a>
                         <div class="sever-nav-actions flex items-center gap-3 md:gap-4 relative">
