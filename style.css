@@ -203,12 +203,50 @@ img[loading] {
 }
 
 /* Mobile optimizations */
+
 @media (max-width: 768px) {
-    .sever-nav-brand {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 6px;
+    body {
+        cursor: auto !important;
     }
+    * {
+        cursor: auto !important;
+    }
+    #cursor, #cursor-follower {
+        display: none !important;
+    }
+    .glass-panel {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    body::before {
+        filter: none;
+        opacity: 0.18;
+    }
+    .sever-nav-bar {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 12px;
+    }
+    .sever-nav-actions {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .sever-nav-link {
+        flex: 0 1 auto;
+        min-width: 30%;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+    }
+    .sever-ticket-panel {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+}
     .sever-nav-bar {
         justify-content: center;
     }
@@ -385,3 +423,30 @@ body {
   padding-left: 0.5em;
 }
 
+
+
+@media (max-width: 768px) {
+    .sever-nav-brand {
+        display: none !important;
+    }
+    .sever-nav-bar {
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        padding: 8px 10px !important;
+    }
+    .sever-nav-actions {
+        width: 100% !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        gap: 6px !important;
+    }
+    .sever-nav-link {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        padding: 7px 8px !important;
+        font-size: 9px !important;
+        letter-spacing: 0.14em !important;
+        white-space: nowrap;
+    }
+}
