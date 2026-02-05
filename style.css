@@ -227,3 +227,19 @@ img[loading] {
 
 
 
+
+
+/* Allow animated background to show through */
+.bg-sever-void {
+    background: transparent !important;
+}
+
+body {
+    background: transparent;
+}
+
+
+/* Force custom cursor everywhere */
+* {
+    cursor: none !important;
+}
