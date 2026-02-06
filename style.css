@@ -514,3 +514,17 @@ body {
     white-space: nowrap;
   }
 }
+
+
+.sever-nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
+}
+
+.sever-nav-link:hover {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
+}
