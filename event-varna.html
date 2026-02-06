@@ -53,9 +53,13 @@
                         <span class="px-3 py-1 border border-sever-cyan/30 rounded-full text-xs tracking-widest">БОЛГАРИЯ</span>
                         <span class="w-12 h-px bg-sever-cyan"></span>
                     </div>
-                    <h1 class="text-6xl md:text-9xl font-display font-bold mb-6 tracking-tighter glitch" data-text="ВАРНА">
+                    <div class="flex flex-wrap items-center gap-4 mb-6">
+                        <h1 class="text-6xl md:text-9xl font-display font-bold tracking-tighter glitch" data-text="ВАРНА">
                         ВАРНА
+                    
+                        <span id="varna-countdown" class="inline-block align-baseline ml-3 text-xl md:text-5xl font-display font-bold tracking-tighter text-white border-2 border-white/80 rounded-md px-2 md:px-3 py-0.5 md:py-1 -translate-y-1 md:-translate-y-3">--:--:--:--</span>
                     </h1>
+                    </div>
                     <div class="flex flex-wrap gap-8 text-sm md:text-base">
                         <div class="flex items-center gap-2">
                             <i data-feather="calendar" class="w-5 h-5 text-sever-cyan"></i>
@@ -221,6 +225,24 @@
 
         // initialize in case the details block is visible on load
         initGalleryScroll();
+    </script>
+    <script>
+        const varnaCountdownEl = document.getElementById('varna-countdown');
+        if (varnaCountdownEl) {
+            const target = new Date(2026, 1, 28, 23, 59, 59); // Feb 28, 2026 local time
+            const tick = () => {
+                const now = new Date();
+                let diff = Math.max(0, target - now);
+                const sec = Math.floor(diff / 1000);
+                const days = Math.floor(sec / 86400);
+                const hours = Math.floor((sec % 86400) / 3600);
+                const mins = Math.floor((sec % 3600) / 60);
+                const secs = sec % 60;
+                varnaCountdownEl.textContent = `${days}:${String(hours).padStart(2, "0")}:${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+            };
+            tick();
+            setInterval(tick, 1000);
+        }
     </script>
     <script>feather.replace();</script>
 </body>
